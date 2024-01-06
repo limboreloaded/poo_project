@@ -52,7 +52,7 @@ class Person {
             return this->phone;
         }
 
-        char* setPhone(char* phone) {
+        void setPhone(char* phone) {
             strcpy(this->phone, phone);
         }
 
@@ -70,6 +70,8 @@ class Person {
             for (int i = 0; i < eventsCount; i++) {
                 this->attendedEvents[i] = attendedEvents[i];
             }
+
+            this->eventsCount = eventsCount;
         }
 
         void addToBalance(double amount) {

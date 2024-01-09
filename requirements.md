@@ -55,7 +55,6 @@ Phase 2:
     At least a new class will be created by deriving an existing class
     The application will contain at least one abstract class (can be interface) containing at least one pure virtual method. The pure method will be overdefined in a derived class.
     Existing classes will have at least 2 virtual methods other than pure virtual ones. Methods will be overdefined by derived classes.
-    At least one STL class will be used in one of the existing classes
     The application must work turnkey (once started it will not require any further changes to the source code to expose all the functionality)
     This phase is considered implemented if at least 75% of the requirements are implemented
     Changes to the project source code are managed using a Git repository. Is mandatory that students do multiple commits after each class implementation/update. Each commit must contain a short message detailing the changes. If the phase has less than 5 commits (in different days), it will not be taken into account.

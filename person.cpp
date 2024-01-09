@@ -100,6 +100,14 @@ public:
         this->balance += amount;
     }
 
+    vector<Ticket> getTickets() {
+        return this->tickets;
+    }
+
+    void setTickets(vector<Ticket> tickets) {
+        this->tickets = tickets;
+    }
+
     void buyTicket(double ticketPrice)
     {
         double balance = this->balance;
@@ -112,7 +120,9 @@ public:
 
         this->setBalance(balance - ticketPrice);
 
-        Ticket ticket = Ticket(0, ticketPrice);
+        int ticketCount = Ticket::ticketCount;
+
+        Ticket ticket = Ticket(ticketCount, ticketPrice);
 
         this->tickets.push_back(ticket);
     }
@@ -124,25 +134,13 @@ public:
 
     void addAttendedEvent(string eventId)
     {
-        string *eventsCopy = new string[this->eventsCount];
-
-        if (this->attendedEvents != nullptr)
+        if (this->attendedEvents == nullptr)
         {
-            delete[] this->attendedEvents;
+            this->attendedEvents = new string[0];
         }
 
-        this->eventsCount += 1;
-
-        this->attendedEvents = new string[this->eventsCount];
-
-        for (int i = 0; i < this->eventsCount - 1; i++)
-        {
-            this->attendedEvents[i] = eventsCopy[i];
-        }
-
-        this->attendedEvents[this->eventsCount - 1] = eventId;
-
-        delete[] eventsCopy;
+       this->attendedEvents[this->eventsCount] = eventId;
+       this->eventsCount++;
     }
 
     bool operator>(Person p)

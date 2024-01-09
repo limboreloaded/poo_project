@@ -134,8 +134,6 @@ public:
 
         this->participants[this->participantCount - 1] = participant;
 
-        participant.addAttendedEvent(this->eventId);
-
         delete[] participantCopy;
     }
 

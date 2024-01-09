@@ -1,6 +1,7 @@
 #include <iostream>
 #include "person.cpp"
 #include "event.cpp"
+#include "ticket.cpp"
 
 using namespace std;
 
@@ -20,12 +21,7 @@ int main() {
 
     e.setParticipants(pArr, 3);
 
-    int participantCount = e.getParticipantCount();
-    Person* eventParticipants = e.getParticipants();
-
-    for (int i = 0; i < participantCount; i++) {
-        cout << eventParticipants[i];
-    }
+    e.buyTicket(p);
 
     return 0;
 }

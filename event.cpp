@@ -2,6 +2,8 @@
 
 #include <iostream>
 #include "person.cpp"
+#include "ticket.cpp"
+
 
 using namespace std;
 
@@ -15,6 +17,14 @@ private:
     int participantCount;
 
 public:
+    Event()
+    {
+        this->eventId = "";
+        this->location = "";
+        this->ticketPrice = 0.0;
+        this->participantCount = 0;
+        this->participants = nullptr;
+    }
     Event(string eventId, string location, double ticketPrice, int participantCount)
     {
         this->eventId = eventId;
@@ -69,10 +79,18 @@ public:
         this->ticketPrice += amount;
     }
 
-    Person* getParticipants() {
-        Person* participants = new Person[this->participantCount];
+    void buyTicket(Person &participant)
+    {
+        this->addParticipant(participant);
+        participant.buyTicket(this->ticketPrice);
+    }
 
-        for (int i = 0; i < this->participantCount; i++) {
+    Person *getParticipants()
+    {
+        Person *participants = new Person[this->participantCount];
+
+        for (int i = 0; i < this->participantCount; i++)
+        {
             participants[i] = this->participants[i];
         }
 
@@ -131,7 +149,10 @@ public:
         if (e.participants != nullptr)
         {
             if (this->participants != nullptr)
+            {
                 delete[] this->participants;
+            }
+
             this->participants = new Person[e.participantCount];
 
             for (int i = 0; i < e.participantCount; i++)
@@ -139,7 +160,6 @@ public:
                 this->participants[i] = e.participants[i];
             }
         }
-
         return (*this);
     }
 
@@ -155,7 +175,8 @@ public:
     friend ostream &operator<<(ostream &, Event);
 };
 
-ostream& operator<<(ostream& out, Event e) {
+ostream &operator<<(ostream &out, Event e)
+{
     cout << "Event id: " << e.eventId << endl;
     cout << "Event location: " << e.location << endl;
     cout << "Ticket price: " << e.ticketPrice << endl;

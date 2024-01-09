@@ -1,3 +1,5 @@
+#pragma once
+
 #include <iostream>
 #include "person.cpp"
 
@@ -13,7 +15,7 @@ private:
     int participantCount;
 
 public:
-    Event(string eventId, string location, Person *participants, double ticketPrice, int participantCount)
+    Event(string eventId, string location, double ticketPrice, int participantCount)
     {
         this->eventId = eventId;
         this->location = location;
@@ -67,6 +69,16 @@ public:
         this->ticketPrice += amount;
     }
 
+    Person* getParticipants() {
+        Person* participants = new Person[this->participantCount];
+
+        for (int i = 0; i < this->participantCount; i++) {
+            participants[i] = this->participants[i];
+        }
+
+        return participants;
+    }
+
     void setParticipants(Person *participants, int participantCount)
     {
         if (this->participants != nullptr)
@@ -103,6 +115,8 @@ public:
         }
 
         this->participants[this->participantCount - 1] = participant;
+
+        participant.addAttendedEvent(this->eventId);
 
         delete[] participantCopy;
     }

@@ -47,15 +47,18 @@ Phase 1:
 Phase 2:
 
     Deadline: TBD
-    The program can receive as a parameter in the command line mode of operation: if it uses a menu in the console or processes a text file with all input data (example: if the application is called oop.exe, then can be launched in execution in the following way: oop.exe data.txt, in which case it will process the data from the file received as a parameter)
-    The application can process data from a text file and will display the results on the console according to the above
-    The application will use binary files to save tickets issued to date; when restarting the application the data will be restored
-    All entities needed to implement the above functionality will be added to the existing classes (or new classes related to the project can be defined)
-    A menu will be implemented to help the user navigate through the different functionalities
-    At least a new class will be created by deriving an existing class
-    The application will contain at least one abstract class (can be interface) containing at least one pure virtual method. The pure method will be overdefined in a derived class.
-    Existing classes will have at least 2 virtual methods other than pure virtual ones. Methods will be overdefined by derived classes.
-    The application must work turnkey (once started it will not require any further changes to the source code to expose all the functionality)
+    1.The program can receive as a parameter in the command line mode of operation: if it uses a menu in the console or processes a text file with all input data (example: if the application is called oop.exe, then can be launched in execution in the following way: oop.exe data.txt, in which case it will process the data from the file received as a parameter) -> DONE
+    2.The application can process data from a text file and will display the results on the console according to the above
+    3.The application will use binary files to save tickets issued to date; when restarting the application the data will be restored
+    4.All entities needed to implement the above functionality will be added to the existing classes (or new classes related to the project can be defined)
+    5.A menu will be implemented to help the user navigate through the different functionalities
+    6.At least a new class will be created by deriving an existing class -> DONE
+    7.The application will contain at least one abstract class (can be interface) containing at least one pure virtual method. The pure method will be overdefined in a derived class. -> DONE
+    8.Existing classes will have at least 2 virtual methods other than pure virtual ones. Methods will be overdefined by derived classes.
+    9.The application must work turnkey (once started it will not require any further changes to the source code to expose all the functionality)
+
+
+    
     This phase is considered implemented if at least 75% of the requirements are implemented
     Changes to the project source code are managed using a Git repository. Is mandatory that students do multiple commits after each class implementation/update. Each commit must contain a short message detailing the changes. If the phase has less than 5 commits (in different days), it will not be taken into account.
 

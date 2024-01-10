@@ -125,6 +125,8 @@ public:
         Ticket ticket = Ticket(ticketCount, ticketPrice);
 
         this->tickets.push_back(ticket);
+
+        cout << "Bought ticket: " << ticket.getId() << " ";
     }
 
     void removeFromBalance(double amount)

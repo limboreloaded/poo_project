@@ -178,7 +178,7 @@ ostream &operator<<(ostream &out, Event e)
     cout << "Event id: " << e.eventId << endl;
     cout << "Event location: " << e.location << endl;
     cout << "Ticket price: " << e.ticketPrice << endl;
-    cout << "Total participants: " << e.participantCount;
+    cout << endl;
 
     return out;
 }

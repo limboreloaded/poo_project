@@ -33,6 +33,43 @@ public:
             Event event = tokenize(iterator, " ");
             events.push_back(event);
         }
+
+        string reader;
+
+        cout << "\033c";
+
+        cout << "Welcome! Please choose an option from below to start operating the ticket machine!\n";
+        cout << "Type (1) or (2):\n";
+
+        cout << "1. Buy a ticket.\n";
+        cout << "2. Show personal info. \n";
+
+        cin >> reader;
+        cout << "\033c";
+
+        if (reader == "1")
+        {
+            cout << "Please choose an event by id!\n";
+
+            for (int i = 0; i < events.size(); i++)
+            {
+                cout << events.at(i) << "\n\n";
+            }
+
+            cin >> reader;
+            
+            for (int i = 0; i < events.size(); i++)
+            {
+                string eventId = events.at(i).getEventId();
+                if (eventId == reader) {
+                    events.at(i).buyTicket(this->user);
+                }
+            }
+        }
+
+        else if (reader == "2") {
+            cout << this->user;
+        }
     }
 
     Event tokenize(string s, string del)
@@ -54,11 +91,13 @@ public:
                 e.setEventId(iterator);
             }
 
-            if (iteratorCount == 2) {
+            if (iteratorCount == 2)
+            {
                 e.setLocation(iterator);
             }
 
-            if (iteratorCount == 3) {
+            if (iteratorCount == 3)
+            {
                 e.setTicketPrice(stod(iterator));
                 iteratorCount = 0;
             }

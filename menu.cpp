@@ -77,6 +77,8 @@ public:
                     binfile = fopen(path.c_str(),"wb");
 
                     fwrite((char*) &ticket,sizeof(Ticket),1,binfile); 
+
+                    fclose(binfile);
                 }
             }
         }

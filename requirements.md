@@ -49,13 +49,13 @@ Phase 2:
     Deadline: TBD
     1.The program can receive as a parameter in the command line mode of operation: if it uses a menu in the console or processes a text file with all input data (example: if the application is called oop.exe, then can be launched in execution in the following way: oop.exe data.txt, in which case it will process the data from the file received as a parameter) -> DONE
     2.The application can process data from a text file and will display the results on the console according to the above - DONE
-    3.The application will use binary files to save tickets issued to date; when restarting the application the data will be restored
+    3.The application will use binary files to save tickets issued to date; when restarting the application the data will be restored - DONE
     4.All entities needed to implement the above functionality will be added to the existing classes (or new classes related to the project can be defined)
     5.A menu will be implemented to help the user navigate through the different functionalities -> DONE
     6.At least a new class will be created by deriving an existing class -> DONE
     7.The application will contain at least one abstract class (can be interface) containing at least one pure virtual method. The pure method will be overdefined in a derived class. -> DONE
     8.Existing classes will have at least 2 virtual methods other than pure virtual ones. Methods will be overdefined by derived classes.
-    9.The application must work turnkey (once started it will not require any further changes to the source code to expose all the functionality)
+    9.The application must work turnkey (once started it will not require any further changes to the source code to expose all the functionality) - DONE
 
 
     

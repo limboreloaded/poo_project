@@ -62,7 +62,21 @@ public:
             {
                 string eventId = events.at(i).getEventId();
                 if (eventId == reader) {
-                    events.at(i).buyTicket(this->user);
+                    Ticket ticket = events.at(i).buyTicket(this->user);
+
+                    int ticketId = ticket.getId();
+
+                    FILE* binfile;
+
+                    string phoneNumber = string(user.getPhone());
+
+                    string path = "tickets/";
+                    path = path + phoneNumber;
+                    path = path + ".dat";
+
+                    binfile = fopen(path.c_str(),"wb");
+
+                    fwrite((char*) &ticket,sizeof(Ticket),1,binfile); 
                 }
             }
         }

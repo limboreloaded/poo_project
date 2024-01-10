@@ -79,10 +79,11 @@ public:
         this->ticketPrice += amount;
     }
 
-    void buyTicket(Person &participant)
+    Ticket buyTicket(Person &participant)
     {
         this->addParticipant(participant);
-        participant.buyTicket(this->ticketPrice);
+        Ticket ticket = participant.buyTicket(this->ticketPrice);
+        return ticket;
     }
 
     Person *getParticipants()

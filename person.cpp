@@ -108,7 +108,7 @@ public:
         this->tickets = tickets;
     }
 
-    void buyTicket(double ticketPrice)
+    Ticket buyTicket(double ticketPrice)
     {
         double balance = this->balance;
 
@@ -127,6 +127,8 @@ public:
         this->tickets.push_back(ticket);
 
         cout << "Bought ticket: " << ticket.getId() << " ";
+
+        return ticket;
     }
 
     void removeFromBalance(double amount)
